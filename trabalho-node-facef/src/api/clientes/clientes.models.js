@@ -1,0 +1,27 @@
+import { Model } from 'sequelize';
+import Bcrypt from 'bcryptjs';
+import * as brUtils from '@brazilian-utils/validators';
+
+export default (sequelize, dataTypes) => {
+    class Cliente extends Model {};
+
+    Cliente.init({
+        nome: dataTypes.STRING,
+        numeroCpfCnpj: {
+            type: dataTypes.STRING,
+            unique: true
+        },
+        email: {
+            type: dataTypes.STRING,
+            unique: true
+        },
+        senha: dataTypes.STRING
+    }, { sequelize, modelName: 'cliente' });
+
+    Cliente.addHook('beforeSave', async (cliente) => {
+        const hash = await Bcrypt.hash(cliente.senha, 10);
+        cliente.senha = hash;
+    });
+
+    return Cliente;
+};
