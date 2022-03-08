@@ -1,0 +1,24 @@
+{
+  "name": "star-wars-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andre-Borges/StarWars-Api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andre-Borges/StarWars-Api/issues"
+  },
+  "homepage": "https://github.com/Andre-Borges/StarWars-Api#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1"
+  }
+}
